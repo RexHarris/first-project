@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+     /* CSS样式制作 */  
+     .show{
+         
+     }
+     .hide{
+         display:none;
+     }
+  
+       
+    </style>
+   
+ 
+</head>
+<body>
+<!-- HTML页面布局 -->
+
+<div class = "tabs">
+    <!--选项卡标签-->
+    <div>
+        <ul style = "width:500px;">
+            <li class = "liTag" style = "width:100px;float :left;"  >房产</li>
+            <li class = "liTag" style = "width:100px;float :left;" onclick = "tag_2()">家居</li>
+            <li class = "liTag" style = "width:100px;float :left;" onclick = "tag_3()">二手房</li>
+        
+         </ul>
+    </div>
+    <!--选项卡内容-->
+    <ul class = "tagContent">
+        <li class = "show">275万购昌平邻铁三居.....</li>
+        <li class = "hide"> 40平出租屋大改造 美少女的混搭小窝</li>
+        <li class = "hide">通州豪华3居260万 二环稀缺2居250w甩</li>
+    </ul>
+    
+</div>
+ 
+</body>
+ <script type="text/javascript">
+         
+    // JS实现选项卡切换
+    // windows.onload = function (){
+    //     var liT = document.getElementByClass('liTag');
+    //     var liC = document.getElementByClass('tagContent').chlidren();
+    //     for(var i = 0;i < liT.length;i++){
+    //         liT[i].onlick(function(){
+    //             liC[i].className = 'show';
+    //             for(var j = i;j < liC.length; j++){
+    //                 liC[j].className = 'hide';
+    //             }
+          
+    //         });
+    //     }
+    // }
+    var liT = document.getElementsByClassName('tagContent');
+    var liC = document.getElementsByTagName('li');
+    console.log(liT);
+   window.onload = function tag_1 (){
+    	var i=0;
+        liC[0].index = 'show';
+        liC[1].className = 'hide';
+        liC[2].className = 'hide';
+        
+    }
+    function tag_2 (){
+        liC[1].className = 'show';
+        liC[0].className = 'hide';
+        liC[2].className = 'hide';
+    }
+    function tag_3 (){
+        liC[2].className = 'show';
+    }
+    
+    
+    
+    </script>
+</html>
